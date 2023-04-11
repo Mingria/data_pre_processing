@@ -16,6 +16,7 @@ def parse_bln( path="D:\\PycharmProject\\dataset\\meteorological_data\\chaohu.bl
         if float(i[-1]) -1.0 == 0.0:
             del chaohu[index]
     map = np.array([[0 for i in range(800)] for j in range(900)])
+    #四舍五入定边界
     # for position in chaohu:
     #     if (float(position[0])-113.0)/0.01 - (float(position[0])-113.0)//0.01 < 0.5:
     #         x = int((float(position[0])-113.0)//0.01)
@@ -25,7 +26,7 @@ def parse_bln( path="D:\\PycharmProject\\dataset\\meteorological_data\\chaohu.bl
     #     else: y = int((36.0-float(position[1]))//0.01 + 1)
     #
     #     map[y, x] = 255
-
+    #取边界
     for position in chaohu:
         x = int((float(position[0])-113.0)//0.01)
         y = int((36.0-float(position[1]))//0.01)
